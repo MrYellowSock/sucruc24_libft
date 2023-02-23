@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/23 17:05:08 by skulkamt          #+#    #+#             */
+/*   Updated: 2023/02/23 17:09:19 by skulkamt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	is_overflow(size_t a, size_t b)
 {
 	size_t	result;
 
-	// Check if either of them is zero
 	if (a == 0 || b == 0)
 		return (0);
 	result = a * b;
@@ -13,6 +24,7 @@ int	is_overflow(size_t a, size_t b)
 	else
 		return (1);
 }
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	totalsize;

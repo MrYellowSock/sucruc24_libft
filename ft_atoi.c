@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/23 17:04:57 by skulkamt          #+#    #+#             */
+/*   Updated: 2023/02/23 17:08:14 by skulkamt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ispace(int c)
 {
-	return (( c >= 9 && c <= 13 ) || c == ' ');
+	return ((c >= 9 && c <= 13) || c == ' ');
 }
 
 const char	*skip(const char *str, int (*f)(int c))
@@ -25,7 +37,7 @@ int	ft_atoi(const char *str)
 	str = skip(str, ispace);
 	if (*str == '-' || *str == '+')
 	{
-		if(*str == '-')
+		if (*str == '-')
 			pow *= -1;
 		str++;
 	}

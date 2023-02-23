@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/23 17:07:52 by skulkamt          #+#    #+#             */
+/*   Updated: 2023/02/23 17:08:15 by skulkamt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	min(size_t a, size_t b)
@@ -16,7 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	s += min(start, ft_strlen(s));
 	n = min(len, ft_strlen(s));
-	newone = ft_calloc((n + 1) , sizeof(char));
+	newone = ft_calloc((n + 1), sizeof(char));
 	if (newone == NULL)
 	{
 		return (newone);
