@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:07:25 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/02/23 17:08:15 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/02/23 17:12:07 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 	d = dst;
 	s = src;
 	n = siz;
-	/* Find the end of dst and adjust bytes left but don't go past end */
 	while (n-- != 0 && *d != '\0')
 		d++;
 	dlen = d - dst;
@@ -39,5 +38,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 		s++;
 	}
 	*d = '\0';
-	return (dlen + (s - src)); /* count does not include NUL */
+	return (dlen + (s - src));
 }

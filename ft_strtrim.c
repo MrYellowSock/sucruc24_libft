@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:07:49 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/02/23 17:08:15 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/02/23 17:20:58 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,16 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t		len;
-	const char	*start;
-	const char	*end;
-	size_t		new_len;
-	char		*new_str;
+	size_t	len;
+	char	*new_str;
 
-	len = ft_strlen(s1);
-	start = s1;
-	end = s1 + len - 1;
-	while (*start && ft_strchr(set, *start))
-	{
-		start++;
-	}
-	while (end > start && ft_strchr(set, *end))
-	{
-		end--;
-	}
-	new_len = end - start + 1;
-	new_str = malloc(new_len + 1);
-	if (new_str == NULL)
-	{
+	if (!s1 || !set)
 		return (NULL);
-	}
-	for (size_t i = 0; i < new_len; i++)
-	{
-		new_str[i] = start[i];
-	}
-	new_str[new_len] = '\0';
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	len = ft_strlen(s1);
+	while (len && ft_strchr(set, s1[len - 1]))
+		len--;
+	new_str = ft_substr(s1, 0, len);
 	return (new_str);
 }

@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:07:31 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/02/23 17:08:15 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/02/23 17:13:01 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	n = dstsize;
 	while (n != 0 && --n > 0)
 	{
-		if ((*dst++ = *src++) == '\0')
+		*dst = *src;
+		if ((*dst) == '\0')
 			break ;
+		dst++;
+		src++;
 	}
 	if (n == 0 && dstsize != 0)
 	{

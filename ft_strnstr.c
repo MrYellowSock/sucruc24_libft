@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:07:43 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/02/23 17:08:15 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/02/23 17:14:43 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,11 @@ size_t	min(size_t a, size_t b)
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t			little_len;
-	size_t			big_len;
 	long long int	actual_search;
 	long long int	i;
 
 	little_len = ft_strlen(little);
-	big_len = ft_strlen(big);
-	actual_search = min(big_len, (long long int)len) - little_len;
+	actual_search = min(ft_strlen(big), (long long int)len) - little_len;
 	if (little_len == 0)
 	{
 		return ((char *)big);
