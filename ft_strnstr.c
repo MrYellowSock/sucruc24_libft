@@ -6,12 +6,11 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:07:43 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/02/23 17:14:43 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/02/23 17:24:10 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	min(size_t a, size_t b)
 {

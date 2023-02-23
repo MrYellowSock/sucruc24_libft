@@ -6,11 +6,11 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:06:52 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/02/23 17:08:15 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/02/23 17:24:24 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // dst before src : copy from left to right
 // dst after src : copy from right to left
