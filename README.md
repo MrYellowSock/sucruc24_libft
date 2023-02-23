@@ -1,5 +1,7 @@
 # Test
-- Tripouille: https://github.com/Tripouille/libftTester
+- [X] Tripouille: https://github.com/Tripouille/libftTester
+
+- [X] https://github.com/jtoty/Libftest
 
 - War-machine: https://github.com/0x050f/libft-war-machine
 
