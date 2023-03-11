@@ -6,17 +6,11 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:07:10 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/03/11 18:00:08 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/03/11 21:57:41 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// if it works, don't touch it
-int	contains(char needle, char hay)
-{
-	return (needle == hay);
-}
 
 unsigned int	count_words(const char *start, char sep)
 {
@@ -28,7 +22,7 @@ unsigned int	count_words(const char *start, char sep)
 	count = 0;
 	while (*start != 0)
 	{
-		cur_is_sep = contains(*start, sep);
+		cur_is_sep = *start == sep;
 		if (prev_is_sep && !cur_is_sep)
 		{
 			count++;
@@ -44,7 +38,7 @@ unsigned int	world_len(const char *start, char sep)
 	unsigned int	len;
 
 	len = 0;
-	while (*start != 0 && !contains(*start, sep))
+	while (*start != 0 && !(*start == sep))
 	{
 		len++;
 		start++;
@@ -90,7 +84,7 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	total = count_words(s, c);
-	results = ft_calloc((total + 1) , sizeof(char *));
+	results = ft_calloc((total + 1), sizeof(char *));
 	if (results == NULL)
 		return (NULL);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:06:35 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/03/11 16:47:43 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/03/11 21:54:38 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ t_list	*ft_lstnew(void *content)
 	t_list	*creation;
 
 	creation = malloc(sizeof(t_list));
-	if(creation == NULL)
-		return NULL;
+	if (creation == NULL)
+		return (NULL);
 	creation->content = content;
 	creation->next = NULL;
 	return (creation);

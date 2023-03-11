@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	if (s == NULL)
-		return NULL;
+		return (NULL);
 	s += m_min_1(start, ft_strlen(s));
 	n = m_min_1(len, ft_strlen(s));
 	newone = ft_calloc((n + 1), sizeof(char));
