@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:07:22 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/02/23 17:08:15 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:51:06 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	new_len;
 	char	*new_str;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	new_len = len1 + len2 + 1;

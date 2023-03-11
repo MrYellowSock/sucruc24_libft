@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:07:07 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/02/23 17:08:15 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/03/11 18:02:10 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s != 0)
+	while (s != NULL && *s != 0)
 	{
 		write(fd, s, 1);
 		s++;

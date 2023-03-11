@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:07:10 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/03/11 16:45:28 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/03/11 18:00:08 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,19 @@ const char	*copy_next(char **target, const char *str, int wl)
 	return (str);
 }
 
+void	*free_all(char **results)
+{
+	int	i;
+
+	i = 0;
+	while (results[i] != NULL)
+	{
+		free(results[i]);
+		i++;
+	}
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	unsigned int	total;
@@ -74,13 +87,12 @@ char	**ft_split(char const *s, char c)
 	unsigned int	i;
 	int				wl;
 
-	total = count_words(s, c);
-	results = malloc((total + 1) * sizeof(char *));
-	if (results == NULL)
-	{
+	if (s == NULL)
 		return (NULL);
-	}
-	results[total] = 0;
+	total = count_words(s, c);
+	results = ft_calloc((total + 1) , sizeof(char *));
+	if (results == NULL)
+		return (NULL);
 	i = 0;
 	while (*s != 0 && i < total)
 	{
@@ -89,7 +101,7 @@ char	**ft_split(char const *s, char c)
 		{
 			s = copy_next(results + i++, s, wl);
 			if (s == NULL)
-				return (NULL);
+				return (free_all(results));
 		}
 		else
 			s++;
