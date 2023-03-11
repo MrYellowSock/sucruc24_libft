@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:07:10 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/02/23 17:08:15 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/03/11 16:45:28 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,9 @@ const char	*copy_next(char **target, const char *str, int wl)
 {
 	int	j;
 
-	*target = malloc((wl + 1) * sizeof(char));
-	(*target)[wl] = 0;
+	*target = ft_calloc((wl + 1), sizeof(char));
+	if (*target == NULL)
+		return (NULL);
 	j = 0;
 	while (j < wl)
 	{
@@ -75,6 +76,10 @@ char	**ft_split(char const *s, char c)
 
 	total = count_words(s, c);
 	results = malloc((total + 1) * sizeof(char *));
+	if (results == NULL)
+	{
+		return (NULL);
+	}
 	results[total] = 0;
 	i = 0;
 	while (*s != 0 && i < total)
@@ -82,13 +87,12 @@ char	**ft_split(char const *s, char c)
 		wl = world_len(s, c);
 		if (wl > 0)
 		{
-			s = copy_next(results + i, s, wl);
-			i++;
+			s = copy_next(results + i++, s, wl);
+			if (s == NULL)
+				return (NULL);
 		}
 		else
-		{
 			s++;
-		}
 	}
 	return (results);
 }

@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:06:52 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/02/23 17:24:24 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:00:43 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	d = dst;
 	s = src;
+	if (src == NULL && dst == NULL && len > 0)
+		return (NULL);
 	if (d < s)
-	{
 		while (len--)
-		{
 			*d++ = *s++;
-		}
-	}
 	else
 	{
 		lasts = s + (len - 1);
